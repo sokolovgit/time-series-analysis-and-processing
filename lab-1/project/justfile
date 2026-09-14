@@ -1,5 +1,3 @@
-MODULE := "lab1"
-
 # Список доступних рецептів
 default:
     @just --list
@@ -10,7 +8,7 @@ sync:
 
 # Запустити лабораторну роботу
 run *ARGS:
-    uv run python -m {{MODULE}} {{ARGS}}
+    uv run python src/main.py {{ARGS}}
 
 # Лінт
 lint:
@@ -26,7 +24,19 @@ check:
     uv run ruff format --check .
     uv run ruff check .
 
-# Прибрати артефакти
+# Прибрати кеші (згенеровані графіки лежать у docs/report/assets і трекаються)
 clean:
-    rm -rf output .ruff_cache
+    rm -rf .ruff_cache
     find src -name __pycache__ -type d -exec rm -rf {} +
+
+# Відрендерити блок-схему звіту з блоку mermaid
+diagram:
+    uv run python scripts/render_diagram.py
+
+# Згенерувати шаблон стилів ДСТУ для звіту
+reference:
+    uv run python scripts/make_reference_docx.py
+
+# Зібрати звіт у .docx (ім'я для здачі: just report Прізвище_Ім'я_група_1.docx)
+report *NAME:
+    uv run python scripts/build_report.py {{NAME}}
