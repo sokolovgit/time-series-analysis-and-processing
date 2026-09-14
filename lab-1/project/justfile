@@ -1,3 +1,6 @@
+SKILL := env_var('HOME') / '.claude/skills/kpi-lab-report'
+REPORT := '../docs/report/report.md'
+
 # Список доступних рецептів
 default:
     @just --list
@@ -31,12 +34,12 @@ clean:
 
 # Відрендерити блок-схему звіту з блоку mermaid
 diagram:
-    uv run python scripts/render_diagram.py
+    python3 {{SKILL}}/scripts/render_diagram.py {{REPORT}}
 
 # Згенерувати шаблон стилів ДСТУ для звіту
 reference:
-    uv run python scripts/make_reference_docx.py
+    python3 {{SKILL}}/scripts/make_reference_docx.py ../docs/report/reference.docx
 
 # Зібрати звіт у .docx (ім'я для здачі: just report Прізвище_Ім'я_група_1.docx)
 report *NAME:
-    uv run python scripts/build_report.py {{NAME}}
+    python3 {{SKILL}}/scripts/build_report.py {{REPORT}} {{NAME}}
