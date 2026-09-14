@@ -1,0 +1,48 @@
+[project]
+name = "lab-1"
+version = "0.1.0"
+description = "ЛР 1: отримання та підготовка Time Series"
+requires-python = ">=3.13"
+dependencies = [
+  "numpy>=2.1",
+  "pandas>=2.2",
+  "scipy>=1.14",
+  "matplotlib>=3.9",
+  "requests>=2.32",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.3",
+  "html5lib>=1.1",
+  "openpyxl>=3.1",
+  "xlrd>=2.0",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.16"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lab1"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# RUF001-003 — "неоднозначні" символи Unicode: спрацьовують на кожну кириличну літеру
+# в коментарях, докстрінгах і рядках, а в нас усе це українською.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# Щоб редактор брав саме .venv цієї лаби, а не інтерпретатор із кореня репо.
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["src"]
+typeCheckingMode = "basic"

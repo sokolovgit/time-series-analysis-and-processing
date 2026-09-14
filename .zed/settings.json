@@ -1,0 +1,33 @@
+{
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "language_servers": ["ruff", "pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        { "code_actions": { "source.organizeImports.ruff": true } },
+        { "language_server": { "name": "ruff" } }
+      ]
+    },
+    "Markdown": {
+      "format_on_save": "off",
+      "soft_wrap": "editor_width"
+    },
+    "TOML": {
+      "tab_size": 2
+    }
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.venv",
+    "**/__pycache__",
+    "**/.ruff_cache",
+    "**/.DS_Store"
+  ],
+  "terminal": {
+    "working_directory": "current_project_directory"
+  },
+  "file_types": {
+    "Just": ["justfile"]
+  }
+}

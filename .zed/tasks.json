@@ -1,0 +1,49 @@
+// Рецепти just для поточної лаби. cwd — каталог відкритого файлу,
+// just сам знайде justfile вище по дереву (lab-N/project/justfile).
+[
+  {
+    "label": "lab: run",
+    "command": "just",
+    "args": ["run"],
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "lab: check",
+    "command": "just",
+    "args": ["check"],
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "lab: fmt",
+    "command": "just",
+    "args": ["fmt"],
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "lab: sync",
+    "command": "just",
+    "args": ["sync"],
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "lab: clean",
+    "command": "just",
+    "args": ["clean"],
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]

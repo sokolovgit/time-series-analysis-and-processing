@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# uv (lock-файл навпаки — коммітиться)
+.venv/
+
+# ruff
+.ruff_cache/
+
+# Артефакти лаб: графіки, експорти парсингу
+lab-*/project/output/
+
+# macOS
+.DS_Store
+
+# Локальне
+*.log
+.env
