@@ -1,0 +1,17 @@
+[project]
+name = "lab02-statistical-learning"
+version = "1.0.0"
+description = "ЛР 2: статистичне навчання за Big Data Time Series"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "scipy>=1.14",
+    "matplotlib>=3.9",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+    "scikit-learn>=1.5",
+]
+
+[tool.uv]
+package = false
