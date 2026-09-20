@@ -1,19 +1,22 @@
 {
   "languages": {
     "Python": {
-      "tab_size": 4,
-      "language_servers": ["ruff", "pyright"],
+      "language_servers": ["ruff", "ty"],
       "format_on_save": "on",
-      "formatter": { "language_server": { "name": "ruff" } },
-      "code_actions_on_format": { "source.organizeImports.ruff": true }
+      "formatter": "auto",
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true
+      },
+      "tab_size": 4,
+      "preferred_line_length": 100
     },
     "Markdown": {
       "format_on_save": "off",
-      "soft_wrap": "editor_width"
+      "soft_wrap": "editor_width",
+      "preferred_line_length": 90
     },
-    "TOML": {
-      "tab_size": 2
-    }
+    "JSON": { "tab_size": 2 },
+    "Just": { "tab_size": 4, "hard_tabs": false }
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -22,10 +25,11 @@
     "**/.ruff_cache",
     "**/.DS_Store"
   ],
+  "file_types": {
+    "Just": ["justfile", "*.just"],
+    "TOML": ["ruff.toml"]
+  },
   "terminal": {
     "working_directory": "current_project_directory"
-  },
-  "file_types": {
-    "Just": ["justfile"]
   }
 }
