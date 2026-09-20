@@ -1,0 +1,24 @@
+# Корінь workspace. Сам нічого не встановлює - лише збирає учасників, щоб усі лаби
+# ділили один .venv замість копії numpy/pandas/scipy у кожній теці.
+
+[project]
+name = "kpi-time-series-analysis-and-processing"
+version = "0"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["labs/*/project"]
+
+[tool.ty.environment]
+# Спільний venv workspace. Без цього тайпчекер, запущений із теки лаби,
+# не знаходить numpy і сипле хибними unresolved-import.
+python = ".venv"
+
+[tool.ty.src]
+# Матеріали викладача перевіряти нема сенсу: вони написані під старі версії бібліотек,
+# а частину залежностей (tensorflow, pmdarima) ми свідомо не ставимо.
+exclude = ["**/docs", "**/out"]
