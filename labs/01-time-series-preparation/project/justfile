@@ -1,0 +1,23 @@
+# ЛР 1 - отримання та підготовка Time Series
+
+SKILL := env_var('HOME') / '.claude/skills/kpi-lab-report'
+REPORT := '../docs/report/report.md'
+
+_default:
+    @just --list
+
+# Прогін усіх етапів роботи (~10 с)
+run *ARGS:
+    uv run python src/main.py {{ ARGS }}
+
+# Відрендерити блок-схему звіту з блоку mermaid
+diagram:
+    python3 {{ SKILL }}/scripts/render_diagram.py {{ REPORT }}
+
+# Згенерувати шаблон стилів для звіту
+reference:
+    python3 {{ SKILL }}/scripts/make_reference_docx.py ../docs/report/reference.docx
+
+# Зібрати звіт у .docx
+report *NAME:
+    python3 {{ SKILL }}/scripts/build_report.py {{ REPORT }} {{ NAME }}
