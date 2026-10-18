@@ -1,0 +1,16 @@
+[project]
+name = "lab09-hierarchical-forecasting"
+version = "1.0.0"
+description = "ЛР 9: проєктний практикум з прогнозування ієрархічних структур часових рядів"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "statsmodels>=0.14",
+    "matplotlib>=3.9",
+    "openpyxl>=3.1",
+    "scikit-hts>=0.5.12",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,36 @@
+# ЛР 9 - проєктний практикум з прогнозування ієрархічних структур часових рядів
+
+SKILL := env_var('HOME') / '.claude/skills/kpi-lab-report'
+REPORT := '../docs/report/report.md'
+
+_default:
+    @just --list
+
+# Прогін усіх етапів роботи
+all *ARGS:
+    uv run python src/main.py {{ ARGS }}
+
+# Скопіювати графіки у звіт
+sync-report:
+    cp out/*.png ../docs/report/assets/
+    @echo "графіки перенесено у docs/report/assets/"
+
+# Перерахувати все і оновити звіт
+rebuild: all sync-report
+
+# Відрендерити блок-схему звіту з блоку mermaid
+diagram:
+    python3 {{ SKILL }}/scripts/render_diagram.py {{ REPORT }}
+
+# Згенерувати шаблон стилів для звіту
+reference:
+    python3 {{ SKILL }}/scripts/make_reference_docx.py ../docs/report/reference.docx
+
+# Зібрати звіт у .docx і одразу PDF через Word (macOS)
+report NAME="report.docx":
+    python3 {{ SKILL }}/scripts/build_report.py {{ REPORT }} {{ NAME }}
+    python3 {{ SKILL }}/scripts/export_pdf.py ../docs/report/{{ NAME }}
+
+# Прибрати згенероване
+clean:
+    rm -f out/*.png out/*.xlsx
