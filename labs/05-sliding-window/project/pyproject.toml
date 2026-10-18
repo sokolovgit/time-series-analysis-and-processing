@@ -1,0 +1,18 @@
+[project]
+name = "lab05-sliding-window"
+version = "1.0.0"
+description = "ЛР 5: алгоритми ковзного вікна для обробки Time Series"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "scipy>=1.14",
+    "matplotlib>=3.9",
+    "statsmodels>=0.14",
+    "requests>=2.32",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+]
+
+[tool.uv]
+package = false
