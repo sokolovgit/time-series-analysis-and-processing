@@ -1,0 +1,19 @@
+[project]
+name = "lab04-pattern-discovery"
+version = "1.0.0"
+description = "ЛР 4: пошук закономірностей в структурах Time Series"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "scipy>=1.14",
+    "matplotlib>=3.9",
+    "statsmodels>=0.14",
+    "scikit-learn>=1.5",
+    "requests>=2.32",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+]
+
+[tool.uv]
+package = false
