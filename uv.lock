@@ -18,6 +18,7 @@ members = [
     "lab03-dynamic-statistical-learning",
     "lab04-pattern-discovery",
     "lab05-sliding-window",
+    "lab06-smoothing-regression",
 ]
 
 [[package]]
@@ -590,6 +591,35 @@ requires-dist = [
     { name = "openpyxl", specifier = ">=3.1" },
     { name = "pandas", specifier = ">=2.2" },
     { name = "requests", specifier = ">=2.32" },
+    { name = "scipy", specifier = ">=1.14" },
+    { name = "statsmodels", specifier = ">=0.14" },
+    { name = "xlrd", specifier = ">=2.0" },
+]
+
+[[package]]
+name = "lab06-smoothing-regression"
+version = "1.0.0"
+source = { virtual = "labs/06-smoothing-regression/project" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "openpyxl" },
+    { name = "pandas" },
+    { name = "requests" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+    { name = "statsmodels" },
+    { name = "xlrd" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "matplotlib", specifier = ">=3.9" },
+    { name = "numpy", specifier = ">=2.1" },
+    { name = "openpyxl", specifier = ">=3.1" },
+    { name = "pandas", specifier = ">=2.2" },
+    { name = "requests", specifier = ">=2.32" },
+    { name = "scikit-learn", specifier = ">=1.5" },
     { name = "scipy", specifier = ">=1.14" },
     { name = "statsmodels", specifier = ">=0.14" },
     { name = "xlrd", specifier = ">=2.0" },
