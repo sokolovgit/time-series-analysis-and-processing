@@ -19,6 +19,7 @@ __pycache__/
 # Графіки, які генерує програма: у звіт вони потрапляють через
 # just sync-report у docs/report/assets/, а там уже трекаються.
 labs/*/project/out/
+mkr/project/out/
 
 # Локальне
 *.log

@@ -24,3 +24,7 @@ types:
 # Прокинути команду в лабу: just lab 02 all
 lab NUM *ARGS:
     cd labs/{{ NUM }}-*/project && just {{ ARGS }}
+
+# Прокинути команду в МКР: just mkr all
+mkr *ARGS:
+    cd mkr/project && just {{ ARGS }}
