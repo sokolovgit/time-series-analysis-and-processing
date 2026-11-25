@@ -76,6 +76,8 @@ labs/NN-slug/         напр. labs/02-statistical-learning
     justfile          рецепти самої лаби
     out/              графіки, які пише програма – не трекаються
     src/              модулі лежать пласко, main.py – точка входу
+mkr/                  МКР (завдання 8, МНК) – поза labs/, але та сама будова
+                      docs/ + project/; у workspace і ruff додана явно
 ```
 
 Повний Google Drive дисципліни (там є матеріали, яких ще немає в `docs/`):
@@ -94,6 +96,7 @@ just fmt          ruff format + ruff check --fix
 just lint         ruff format --check + ruff check
 just types        uvx ty check
 just lab 02 all   виконати рецепт лаби, не заходячи в її каталог
+just mkr all      те саме для МКР
 ```
 
 З каталогу лаби (`labs/NN-slug/project`):

@@ -8,7 +8,7 @@ target-version = "py313"
 extend-exclude = [".venv", "docs", "out", "*.md"]
 # Модулі лаб лежать пласко в src/ і імпортуються за іменем. Без цього ruff вважає
 # їх сторонніми пакетами й вимагає сортувати разом із numpy.
-src = ["labs/*/project/src"]
+src = ["labs/*/project/src", "mkr/project/src"]
 
 [lint]
 select = [

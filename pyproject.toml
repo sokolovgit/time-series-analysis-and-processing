@@ -11,7 +11,7 @@ dependencies = []
 package = false
 
 [tool.uv.workspace]
-members = ["labs/*/project"]
+members = ["labs/*/project", "mkr/project"]
 
 [tool.ty.environment]
 # Спільний venv workspace. Без цього тайпчекер, запущений із теки лаби,
